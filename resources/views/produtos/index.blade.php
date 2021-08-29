@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between w-100">
                         <span>@lang('Listagem de Produtos')</span>   <!-- criar uma tela -->
-                        <a href="{{ url('pacientes/create') }}" class="btn-primary btn-sm"> <!-- caminho do arquivo para esta tela, rota em web.php -> PacienteController.php -> create; Laravel -->
+                        <a href="{{ url('produtos/create') }}" class="btn-primary btn-sm"> <!-- caminho do arquivo para esta tela, rota em web.php -> ProdutoController.php -> create; Laravel -->
                             <i class="fa fa-plus"></i> @lang('Novo Produto')  <!-- criar um botão -->
                         </a>
                     </div>
@@ -32,29 +32,39 @@
                         <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>@lang('Nome do Paciente')</td>
-                                <td>@lang('Gênero')</td>
-                                <td colspan="3" class="text-center">@lang('Ações')</td>
+                                <td>@lang('Tipo')</td>
+                                <td>@lang('Modelo')</td>
+                                <td>@lang('Marca')</td>
+                                <td>@lang('Preço de Venda')</td>
+                                <td>@lang('Cor')</td>
+                                <td>@lang('Peso')</td>
+                                <td>@lang('Descrição')</td>
+                                <td colspan="8" class="text-center">@lang('Ações')</td>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($pacientes as $paciente) <!-- vem da function index no PacienteController -->
+                            @foreach($produtos as $produto) <!-- vem da function index no ProdutoController -->
                             <tr>
-                                <td>{{$paciente->id}}</td>
-                                <td>{{$paciente->nome}}</td>
-                                <td>{{$paciente->genero}}</td>
+                                <td>{{$produto->id}}</td>
+                                <td>{{$produto->tipo}}</td>
+                                <td>{{$produto->modelo}}</td>
+                                <td>{{$produto->marca}}</td>
+                                <td>{{$produto->precoVenda}}</td>
+                                <td>{{$produto->cor}}</td>
+                                <td>{{$produto->peso}}</td>
+                                <td>{{$produto->descricao}}</td>
                                 <td class="text-center p-0 align-middle" width="70">
-                                    <a href="{{ route('pacientes.show', $paciente->id)}}" 
+                                    <a href="{{ route('produtos.show', $produto->id)}}" 
                                         class="btn btn-info btn-sm">@lang('Abrir') <!-- outra forma de mostrar caminho do arquivo -->
                                     </a>
                                 </td>
                                 <td class="text-center p-0 align-middle" width="70">
-                                    <a href="{{ route('pacientes.edit', $paciente->id)}}"
+                                    <a href="{{ route('produtos.edit', $produto->id)}}"
                                         class="btn btn-primary btn-sm">@lang('Editar')
                                     </a>
                                 </td>
                                 <td class="text-center p-0 align-middle" width="70">
-                                    <form action="{{ route('pacientes.destroy', $paciente->id)}}" method="post">
+                                    <form action="{{ route('produtos.destroy', $produto->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm" type="submit">Excluir</button>

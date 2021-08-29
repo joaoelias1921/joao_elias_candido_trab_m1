@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between w-100">
                         <span>@lang('Criar (Trabalho M1)')</span>
-                        <a href="{{ url('pacientes') }}" class="btn-info btn-sm">
+                        <a href="{{ url('produtos') }}" class="btn-info btn-sm">
                             <i class="fa fa-arrow-left"></i> @lang('Voltar')
                         </a>
                     </div>
@@ -28,16 +28,41 @@
                     </div>
                     @endif
 
-                    {!! Form::open(['action' =>'PacienteController@store', 'method' => 'POST'])!!}  <!-- metodo store no PacienteController -->
+                    {!! Form::open(['action' =>'ProdutoController@store', 'method' => 'POST'])!!}  <!-- metodo store no ProdutoController -->
 
                     <div class="form-group">
-                        {!! Form::label(__('Nome do Paciente:')) !!}   <!-- como label html -->
-                        {!! Form::text("nome", null ,["class"=>"form-control","required"=>"required"]) !!}  <!-- campo input -->
+                        {!! Form::label(__('Tipo:')) !!}   <!-- como label html -->
+                        {!! Form::text("tipo", null ,["class"=>"form-control","required"=>"required"]) !!}  <!-- campo input -->
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label(__('Gênero:')) !!}
-                        {!! Form::text("genero", null ,["class"=>"form-control","required"=>"required"]) !!}
+                        {!! Form::label(__('Modelo:')) !!}
+                        {!! Form::text("modelo", null ,["class"=>"form-control","required"=>"required"]) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label(__('Marca:')) !!}
+                        {!! Form::text("marca", null ,["class"=>"form-control","required"=>"required"]) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label(__('Preço de Venda:')) !!}
+                        {!! Form::number("precoVenda", null ,["class"=>"form-control","required"=>"required"]) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label(__('Cor:')) !!}
+                        {!! Form::text("cor", null ,["class"=>"form-control","required"=>"required"]) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label(__('Peso:')) !!}
+                        {!! Form::number("peso", null ,["class"=>"form-control","required"=>"required"]) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label(__('Descrição:')) !!}
+                        {!! Form::text("descricao", null ,["class"=>"form-control","required"=>"required"]) !!}
                     </div>
 
                     <div class="well well-sm clearfix">
