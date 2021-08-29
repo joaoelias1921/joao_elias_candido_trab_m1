@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <style>
             html, body {
                 background-color: #fff;
@@ -46,6 +47,7 @@
 
             .title {
                 font-size: 84px;
+                font-weight: bold;
             }
 
             .links > a {
@@ -60,6 +62,20 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            #aluno {
+                color: #636b6f;
+                font-size: 17px;
+                font-weight: 600;
+                text-decoration: none;
+            }
+
+            #botaoCRUD button a {
+                color: white;
+                font-weight: bold;
+                text-decoration: none;
+                letter-spacing: .1rem;
             }
         </style>
     </head>
@@ -81,18 +97,22 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Trabalho M1 - Laravel
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div id="botaoCRUD">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">
+                        <a href="http://127.0.0.1:8000/produtos">Acessar CRUD</a>
+                    </button>
+                </div>
+                <br><br>
+                <br><br>
+                <hr>
+
+                <div id="aluno">
+                    <span>Aluno: João Elias Cândido Reis</span>
+                    <br><br>
+                    <span>Engenharia de Software - 4ª Fase - Desenvolvimento Web II</span>
                 </div>
             </div>
         </div>
