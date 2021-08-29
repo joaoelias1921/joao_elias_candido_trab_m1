@@ -23,8 +23,8 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between w-100">
-                        <span><span class="text-info">{{$produto->modelo}}</span>: (@lang('Trabalho M1'))</span>
-                        <a href="{{ url('produtos') }}" class="btn-info btn-sm">
+                        <h4><span class="text-info">{{$produto->modelo}}</span> - @lang('Visualização')</h4>
+                        <a href="{{ url('produtos') }}" class="btn btn-outline-info">
                             <i class="fa fa-arrow-left"></i> @lang('Voltar')
                         </a>
                     </div>
@@ -56,15 +56,15 @@
                         </tr>
                         <tr>
                             <th align="left"><strong>@lang('Preço de Venda')</strong>:</th>
-                            <th align="left">{{$produto->precoVenda}}</th>
+                            <th align="left">R${{$produto->precoVenda}}</th>
                         </tr>
                         <tr>
                             <th align="left"><strong>@lang('Cor')</strong>:</th>
                             <th align="left">{{$produto->cor}}</th>
                         </tr>
                         <tr>
-                            <th align="left"><strong>@lang('Peso')</strong>:</th>
-                            <th align="left">{{$produto->peso}}</th>
+                            <th align="left"><strong>@lang('Peso (kg)')</strong>:</th>
+                            <th align="left">{{$produto->peso}} kg</th>
                         </tr>
                         <tr>
                             <th align="left"><strong>@lang('Descrição')</strong>:</th>
@@ -72,11 +72,11 @@
                         </tr>
                         <tr>
                             <th align="left"><strong>@lang('Adicionado')</strong>:</th>
-                            <th align="left">{{$paciente->created_at}}</th>
+                            <th align="left">{{$produto->created_at}}</th>
                         </tr>
                         <tr>
                             <th align="left"><strong>@lang('Atualizado')</strong>:</th>
-                            <th align="left">{{$paciente->updated_at}}</th>
+                            <th align="left">{{$produto->updated_at}}</th>
                         </tr>
                     </table>
                 </div>

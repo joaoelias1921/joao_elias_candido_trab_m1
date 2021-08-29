@@ -5,6 +5,14 @@
 @push('css')    <!-- posso ter definições css proprias para essa tela, tag style abaixo -->
 <style>
     /* Personalizar layout*/
+    td{
+        text-align: center;
+    }
+    
+    thead{
+        font-weight: bold;
+        font-size: .9rem;
+    }
 </style>
 @endpush
 
@@ -15,9 +23,9 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between w-100">
-                        <span>@lang('Listagem de Produtos')</span>   <!-- criar uma tela -->
-                        <a href="{{ url('produtos/create') }}" class="btn-primary btn-sm"> <!-- caminho do arquivo para esta tela, rota em web.php -> ProdutoController.php -> create; Laravel -->
-                            <i class="fa fa-plus"></i> @lang('Novo Produto')  <!-- criar um botão -->
+                        <h4>@lang('Listagem de Produtos')</h4>   <!-- criar uma tela -->
+                        <a href="{{ url('produtos/create') }}" class="btn btn-outline-primary"> <!-- caminho do arquivo para esta tela, rota em web.php -> ProdutoController.php -> create; Laravel -->
+                            <i class="fa fa-plus"></i> @lang('Novo Produto') <!-- criar um botão -->
                         </a>
                     </div>
                 </div>
@@ -35,9 +43,9 @@
                                 <td>@lang('Tipo')</td>
                                 <td>@lang('Modelo')</td>
                                 <td>@lang('Marca')</td>
-                                <td>@lang('Preço de Venda')</td>
+                                <td>@lang('Preço (R$)')</td>
                                 <td>@lang('Cor')</td>
-                                <td>@lang('Peso')</td>
+                                <td>@lang('Peso (kg)')</td>
                                 <td>@lang('Descrição')</td>
                                 <td colspan="8" class="text-center">@lang('Ações')</td>
                             </tr>
@@ -55,19 +63,19 @@
                                 <td>{{$produto->descricao}}</td>
                                 <td class="text-center p-0 align-middle" width="70">
                                     <a href="{{ route('produtos.show', $produto->id)}}" 
-                                        class="btn btn-info btn-sm">@lang('Abrir') <!-- outra forma de mostrar caminho do arquivo -->
+                                        class="btn btn-outline-info">@lang('Abrir') <!-- outra forma de mostrar caminho do arquivo -->
                                     </a>
                                 </td>
                                 <td class="text-center p-0 align-middle" width="70">
                                     <a href="{{ route('produtos.edit', $produto->id)}}"
-                                        class="btn btn-primary btn-sm">@lang('Editar')
+                                        class="btn btn-outline-primary">@lang('Editar')
                                     </a>
                                 </td>
-                                <td class="text-center p-0 align-middle" width="70">
+                                <td class="text-center p-0 align-middle" width="80">
                                     <form action="{{ route('produtos.destroy', $produto->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" type="submit">Excluir</button>
+                                        <button class="btn btn-outline-danger" type="submit">Excluir</button>
                                     </form>
                                 </td>
                             </tr>

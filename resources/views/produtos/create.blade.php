@@ -15,8 +15,8 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between w-100">
-                        <span>@lang('Criar (Trabalho M1)')</span>
-                        <a href="{{ url('produtos') }}" class="btn-info btn-sm">
+                        <h5>@lang('Criar Novo Produto')</h5>
+                        <a href="{{ url('produtos') }}" class="btn btn-outline-info">
                             <i class="fa fa-arrow-left"></i> @lang('Voltar')
                         </a>
                     </div>
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label(__('Preço de Venda:')) !!}
+                        {!! Form::label(__('Preço de Venda (R$):')) !!}
                         {!! Form::number("precoVenda", null ,["class"=>"form-control","required"=>"required"]) !!}
                     </div>
 
@@ -56,17 +56,17 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label(__('Peso:')) !!}
+                        {!! Form::label(__('Peso (kg):')) !!}
                         {!! Form::number("peso", null ,["class"=>"form-control","required"=>"required"]) !!}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label(__('Descrição:')) !!}
-                        {!! Form::text("descricao", null ,["class"=>"form-control","required"=>"required"]) !!}
+                        {!! Form::textarea("descricao", null ,["class"=>"form-control","required"=>"required"]) !!}
                     </div>
 
                     <div class="well well-sm clearfix">
-                        <button class="btn btn-success pull-right" title="@lang('Salvar')"
+                        <button class="btn btn-outline-success pull-right" title="@lang('Salvar')"
                             type="submit">@lang('Adicionar')</button>
                     </div>
 
