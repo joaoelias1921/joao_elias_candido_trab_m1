@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Trabalho M1 - CRUD</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -71,7 +71,7 @@
                 text-decoration: none;
             }
 
-            #botaoCRUD button a {
+            #botaoCRUD a {
                 color: white;
                 font-weight: bold;
                 text-decoration: none;
@@ -101,9 +101,10 @@
                 </div>
 
                 <div id="botaoCRUD">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">
-                        <a href="http://127.0.0.1:8000/produtos">Acessar CRUD</a>
-                    </button>
+                    <a class="btn btn-primary btn-lg btn-block" 
+                        href="http://127.0.0.1:8000/produtos" role="button">
+                        Acessar CRUD
+                    </a>
                 </div>
                 <br><br>
                 <br><br>
